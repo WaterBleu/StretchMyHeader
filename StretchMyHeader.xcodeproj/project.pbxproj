@@ -14,6 +14,9 @@
 		BD4199501B7137DF00BF949C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD41994F1B7137DF00BF949C /* Images.xcassets */; };
 		BD4199531B7137DF00BF949C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4199511B7137DF00BF949C /* LaunchScreen.xib */; };
 		BD41995F1B7137DF00BF949C /* StretchMyHeaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41995E1B7137DF00BF949C /* StretchMyHeaderTests.swift */; };
+		BD4199691B713AB100BF949C /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4199681B713AB100BF949C /* NewsTableViewCell.swift */; };
+		BD41996B1B713EC000BF949C /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD41996A1B713EC000BF949C /* NewsItem.swift */; };
+		BD4199701B71493B00BF949C /* Stretchy-Header.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD41996D1B71493B00BF949C /* Stretchy-Header.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		BD4199581B7137DF00BF949C /* StretchMyHeaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StretchMyHeaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD41995D1B7137DF00BF949C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD41995E1B7137DF00BF949C /* StretchMyHeaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchMyHeaderTests.swift; sourceTree = "<group>"; };
+		BD4199681B713AB100BF949C /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		BD41996A1B713EC000BF949C /* NewsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
+		BD41996D1B71493B00BF949C /* Stretchy-Header.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Stretchy-Header.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +87,12 @@
 			children = (
 				BD4199461B7137DF00BF949C /* AppDelegate.swift */,
 				BD4199481B7137DF00BF949C /* MasterViewController.swift */,
+				BD4199681B713AB100BF949C /* NewsTableViewCell.swift */,
 				BD41994A1B7137DF00BF949C /* DetailViewController.swift */,
+				BD41996A1B713EC000BF949C /* NewsItem.swift */,
 				BD41994C1B7137DF00BF949C /* Main.storyboard */,
 				BD41994F1B7137DF00BF949C /* Images.xcassets */,
+				BD41996D1B71493B00BF949C /* Stretchy-Header.xcassets */,
 				BD4199511B7137DF00BF949C /* LaunchScreen.xib */,
 				BD4199441B7137DF00BF949C /* Supporting Files */,
 			);
@@ -198,6 +207,7 @@
 				BD41994E1B7137DF00BF949C /* Main.storyboard in Resources */,
 				BD4199531B7137DF00BF949C /* LaunchScreen.xib in Resources */,
 				BD4199501B7137DF00BF949C /* Images.xcassets in Resources */,
+				BD4199701B71493B00BF949C /* Stretchy-Header.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +226,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD41994B1B7137DF00BF949C /* DetailViewController.swift in Sources */,
+				BD41996B1B713EC000BF949C /* NewsItem.swift in Sources */,
 				BD4199491B7137DF00BF949C /* MasterViewController.swift in Sources */,
+				BD4199691B713AB100BF949C /* NewsTableViewCell.swift in Sources */,
 				BD4199471B7137DF00BF949C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

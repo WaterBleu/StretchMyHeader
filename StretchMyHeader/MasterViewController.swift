@@ -12,6 +12,11 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [AnyObject]()
+    @IBOutlet weak var headerUIView: UIView!
+    @IBOutlet weak var headerImageVIew: UIImageView!
+    @IBOutlet weak var headerLabel: UILabel!
+
+
 
 
     override func awakeFromNib() {
@@ -33,6 +38,20 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
         }
+        
+        self.navigationController?.navigationBarHidden = true
+        UIApplication.sharedApplication().statusBarHidden = true
+        
+        self.populateNewsItem()
+
+        var dateformatter = NSDateFormatter()
+        dateformatter.dateStyle = NSDateFormatterStyle.LongStyle
+        self.headerLabel.text = dateformatter.stringFromDate(NSDate())
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,7 +80,14 @@ class MasterViewController: UITableViewController {
     }
 
     // MARK: - Table View
-
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -71,10 +97,13 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! NewsTableViewCell
 
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        let object = objects[indexPath.row] as! NewsItem
+        cell.labelCategory.text = object.category
+        cell.labelCategory.textColor = object.categoryColor
+        cell.labelHeadline.text = object.headline
+        
         return cell
     }
 
@@ -90,6 +119,25 @@ class MasterViewController: UITableViewController {
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
+    }
+    
+    func populateNewsItem(){
+        var item = NewsItem(category: NewsItem.Category.World, headline: "Climate change protests, divestments meet fossil fuels realities")
+        objects.append(item)
+        item = NewsItem(category: NewsItem.Category.Europe, headline: "Scotland's 'Yes' leader says independence vote is 'once in a lifetime'")
+        objects.append(item)
+        item = NewsItem(category: NewsItem.Category.MiddleEast, headline: "Airstrikes boost Islamic State, FBI director warns more hostages possible")
+        objects.append(item)
+        item = NewsItem(category: NewsItem.Category.Africa, headline: "Nigeria says 70 dead in building collapse; questions S. Africa victim claim")
+        objects.append(item)
+        item = NewsItem(category: NewsItem.Category.AsiaPacific, headline: "Despite UN ruling, Japan seeks backing for whale hunting")
+        objects.append(item)
+        item = NewsItem(category: NewsItem.Category.Americas, headline: "Officials: FBI is tracking 100 Americans who fought alongside IS in Syria")
+        objects.append(item)
+        item = NewsItem(category: NewsItem.Category.World, headline: "South Africa in $40 billion deal for Russian nuclear reactors")
+        objects.append(item)
+        item = NewsItem(category: NewsItem.Category.Europe, headline: "'One million babies' created by EU student exchanges")
+        objects.append(item)
     }
 
 
